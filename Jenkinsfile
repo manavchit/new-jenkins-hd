@@ -4,7 +4,7 @@ pipeline{
   stages{
     stage("Hello"){
       steps{
-      echo "Hi! Manav"  
+      echo "Hi! Mv"  
       }
     }
   }
