@@ -69,7 +69,7 @@ pipeline {
     post {
         always {
             emailext(
-                subject: 'Jenkins Build Notification',
+                emailext subject: "Pipeline '${currentBuild.fullDisplayName}' ",
                 body: "Pipeline execution completed. Check Jenkins for details.",
                 to: "${EMAIL_RECIPIENT}",
                 attachLog: true
