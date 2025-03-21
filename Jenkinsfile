@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building the application...'
+                echo 'Building the application successfully...'
                 echo 'mvn clean package' // Use Maven as a build tool
             }
         }
