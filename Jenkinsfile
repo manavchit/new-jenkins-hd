@@ -1,4 +1,3 @@
-
 pipeline {
     agent any
 
@@ -75,7 +74,6 @@ pipeline {
                 to: "${EMAIL_RECIPIENT}",
                 attachLog: true
             )
-        
+        }
     }
 }
-
