@@ -8,29 +8,25 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building the application successfully...'
-                echo 'mvn clean package' // Use Maven as a build tool
+                echo 'Building the application successfully... npm and maven can be used for build'
             }
         }
 
         stage('Unit and Integration Tests') {
             steps {
-                echo 'Running unit and integration tests...'
-                echo 'mvn test'
+                echo 'Running unit and integration tests... JUnit can be used for tests'
             }
         }
 
         stage('Code Analysis') {
             steps {
-                echo 'Performing static code analysis...'
-                echo 'mvn sonar:sonar' // Uses SonarQube for code analysis
+                echo 'Performing static code analysis... soanrQube and ESlint can be used for code ananlysis'
             }
         }
 
         stage('Security Scan') {
             steps {
-                echo 'Running security scan...'
-                echo 'mvn dependency-check:check' // OWASP Dependency Check
+                echo 'Running security scan... Bandit can be used for security scan'
             }
             post {
                 always {
@@ -46,22 +42,19 @@ pipeline {
 
         stage('Deploy to Staging') {
             steps {
-                echo 'Deploying to staging environment...'
-                echo 'scp target/*.war user@staging-server:/path/to/deploy'
+                echo 'Deploying to staging environment... AWS and Docker can be used in Deploy'
             }
         }
 
         stage('Integration Tests on Staging') {
             steps {
-                echo 'Running integration tests on staging...'
-                echo 'curl -X GET http://staging-server/api/health-check'
+                echo 'Running integration tests on staging... Cypress can be used for integration'
             }
         }
 
         stage('Deploy to Production') {
             steps {
-                echo 'Deploying to production server...'
-                echo 'scp target/*.war user@production-server:/path/to/deploy'
+                echo 'Deploying to production server... Heroku could be used for this deployment'
             }
         }
     }
